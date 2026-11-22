@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MEMENTO — личный цифровой дневник, который превращает текст, фотографии и музыку в атмосферное воспоминание дня." />
+  <title>MEMENTO — Личный дневник атмосферы дня</title>
+
+  <!-- Google Fonts with Cyrillic support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#app-main">Перейти к содержимому</a>
+
+  <!-- Persistent Editorial Shell Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#landing" class="brand" aria-label="MEMENTO — на главную">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">MEMENTO</span>
+        <span class="brand-issue">Дневник · 2026</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#landing" class="nav-link" data-route="landing">О проекте</a>
+        <a href="#archive" class="nav-link" data-route="archive">Архив дней</a>
+        <a href="#create" class="nav-link nav-link-cta" data-route="create">Записать день</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app-main" class="app-main">
+    <!-- ================================================================
+         VIEW 1: LANDING (#landing)
+    ================================================================ -->
+    <section id="view-landing" class="view view-landing is-active" aria-labelledby="landing-heading">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Make the Invisible Visible · Личный архив ощущений</p>
+            <h1 id="landing-heading" class="hero-title">
+              Сохраните не только снимки, но и <em>ощущение</em> этого дня
+            </h1>
+            <p class="hero-lead">
+              Через полгода фотографии покажут, где вы были, но редко напомнят, каким был воздух,
+              свет и музыка внутри того вечера. Расскажите о своём дне, добавьте кадры и песню —
+              MEMENTO соберёт их в живую вертикальную сцену и бережно сохранит в папку дня.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#create" class="btn btn-primary">Создать воспоминание дня</a>
+              <a href="#archive" class="btn btn-secondary">Открыть архив дневника</a>
+            </div>
+
+            <dl class="hero-principles" aria-label="Как устроен дневник">
+              <div class="principle-item">
+                <dt>Единый язык</dt>
+                <dd>Каждая запись живёт в общей рамке дневника, но меняет свет, ритм и художественную технику.</dd>
+              </div>
+              <div class="principle-item">
+                <dt>Прозрачная логика</dt>
+                <dd>Цвет рождается из ваших фото, темп — из музыки, настроение и фактура — из слов.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Editorial Visual Teaser: Text + Photo + Song -> Folder of the Day -->
+          <div class="hero-showcase" aria-hidden="true">
+            <div class="teaser-inputs">
+              <div class="teaser-chip">
+                <span class="teaser-chip-num">01</span>
+                <div>
+                  <span class="teaser-chip-label">Текст дня</span>
+                  <p class="teaser-chip-text">«Гуляли по парку, жёлтые листья, пили какао…»</p>
+                </div>
+              </div>
+              <div class="teaser-chip">
+                <span class="teaser-chip-num">02</span>
+                <div>
+                  <span class="teaser-chip-label">Палитра фото</span>
+                  <div class="teaser-swatches">
+                    <span style="background: #C97A40"></span>
+                    <span style="background: #E2B37E"></span>
+                    <span style="background: #5E4032"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="teaser-chip">
+                <span class="teaser-chip-num">03</span>
+                <div>
+                  <span class="teaser-chip-label">Музыка</span>
+                  <p class="teaser-chip-text">Медленный тёплый ритм · мягкое движение</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="teaser-artifact">
+              <div class="teaser-frame">
+                <div class="teaser-art-canvas">
+                  <span class="teaser-date">14.10.2026</span>
+                  <div class="teaser-brush teaser-brush-1"></div>
+                  <div class="teaser-brush teaser-brush-2"></div>
+                  <div class="teaser-brush teaser-brush-3"></div>
+                  <div class="teaser-caption-block">
+                    <span class="teaser-technique">Импрессионизм · Клод Моне</span>
+                    <p class="teaser-title">Осенний парк и какао</p>
+                    <p class="teaser-handwritten">Тёплый свет сквозь холодный вечер</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How the Visual System Works Strip -->
+        <section class="editorial-strip" aria-label="Пять художественных состояний">
+          <div class="strip-header">
+            <p class="eyebrow">Визуальная система</p>
+            <h2 class="strip-title">Один дневник — пять художественных интонаций</h2>
+          </div>
+          <ol class="techniques-list">
+            <li class="technique-card">
+              <span class="technique-index">I</span>
+              <h3>Свет и мазки Моне</h3>
+              <p>Для спокойных и тёплых дней: мягкое свечение, воздушные переходы, неспешный ритм.</p>
+            </li>
+            <li class="technique-card">
+              <span class="technique-index">II</span>
+              <h3>Геометрия Кандинского</h3>
+              <p>Для напряжённых и динамичных часов: контраст, линии, собранный резкий ритм.</p>
+            </li>
+            <li class="technique-card">
+              <span class="technique-index">III</span>
+              <h3>Аналоговая плёнка</h3>
+              <p>Для ностальгии и памятных встреч: деликатное зерно, тёплый оттенок, рукописная интонация.</p>
+            </li>
+            <li class="technique-card">
+              <span class="technique-index">IV</span>
+              <h3>Японский минимализм</h3>
+              <p>Для тихих, прозрачных дней: много воздуха, тонкие линии, замедленное дыхание кадра.</p>
+            </li>
+            <li class="technique-card">
+              <span class="technique-index">V</span>
+              <h3>Редакционный коллаж</h3>
+              <p>Для насыщенных дней со множеством кадров: слоистые снимки и живая смена планов.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         VIEW 2: CREATE MEMORY (#create)
+    ================================================================ -->
+    <section id="view-create" class="view view-create" aria-labelledby="create-heading">
+      <div class="container container-narrow">
+        <header class="view-header">
+          <p class="eyebrow">Новая страница дневника</p>
+          <h1 id="create-heading" class="view-title">Расскажите, как ощущался этот день</h1>
+          <p class="view-subtitle">
+            Опишите погоду, свет, детали и людей рядом — так, как рассказали бы близкому другу.
+            Каждое поле влияет на палитру, фактуру и ритм готового воспоминания.
+          </p>
+        </header>
+
+        <form id="memory-form" class="editorial-form" novalidate>
+          <!-- Accessible Error Banner (hidden when empty) -->
+          <div id="form-error" class="form-error" role="alert" aria-live="polite"></div>
+
+          <!-- Step 1: Story & Date -->
+          <fieldset class="form-section">
+            <legend class="form-section-legend">
+              <span class="step-badge">01</span>
+              <span>История дня</span>
+            </legend>
+
+            <div class="field-row field-row-date">
+              <div class="field">
+                <label for="day-date" class="field-label">Дата дня</label>
+                <input
+                  type="date"
+                  id="day-date"
+                  name="day-date"
+                  class="input"
+                />
+                <p class="field-hint">Оставьте сегодняшнюю или выберите любой важный день из прошлого.</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="day-description" class="field-label">
+                Запись о дне <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="day-description"
+                name="day-description"
+                class="textarea"
+                rows="6"
+                required
+                placeholder="Например: Гуляли вечером по парку, под ногами шуршали жёлтые листья. Было прохладно, но мы грели руки о стаканы с какао и долго смеялись…"
+              ></textarea>
+              <p class="field-hint">
+                Свободный текст на русском: события, время суток, сезон, запахи и настроение.
+              </p>
+            </div>
+          </fieldset>
+
+          <!-- Step 2: Photos -->
+          <fieldset class="form-section">
+            <legend class="form-section-legend">
+              <span class="step-badge">02</span>
+              <span>Фотографии дня</span>
+            </legend>
+
+            <div class="field">
+              <label for="photo-upload" class="upload-dropzone">
+                <span class="upload-icon" aria-hidden="true">＋</span>
+                <span class="upload-title">Добавьте одну или несколько фотографий</span>
+                <span class="upload-subtitle">JPG, PNG или WebP · Цвета снимков сформируют палитру воспоминания</span>
+                <input
+                  type="file"
+                  id="photo-upload"
+                  name="photo-upload"
+                  class="file-input-hidden"
+                  accept="image/*"
+                  multiple
+                />
+              </label>
+            </div>
+
+            <div
+              id="photo-preview"
+              class="photo-preview-grid"
+              aria-live="polite"
+              aria-label="Предпросмотр загруженных фотографий"
+            ></div>
+          </fieldset>
+
+          <!-- Step 3: Music -->
+          <fieldset class="form-section">
+            <legend class="form-section-legend">
+              <span class="step-badge">03</span>
+              <span>Музыка, которая звучала в этот день</span>
+            </legend>
+
+            <p class="section-note">
+              Вставьте ссылку (YouTube / Spotify) или загрузите свой аудиофайл. Если прикрепить аудиофайл,
+              система измерит его энергию и яркость прямо в браузере; по ссылке используются ваши характеристики песни.
+            </p>
+
+            <div class="field-grid field-grid-2">
+              <div class="field">
+                <label for="song-title" class="field-label">Название песни</label>
+                <input
+                  type="text"
+                  id="song-title"
+                  name="song-title"
+                  class="input"
+                  placeholder="Например: Fly Me to the Moon"
+                />
+              </div>
+
+              <div class="field">
+                <label for="song-artist" class="field-label">Исполнитель</label>
+                <input
+                  type="text"
+                  id="song-artist"
+                  name="song-artist"
+                  class="input"
+                  placeholder="Например: Frank Sinatra"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="song-url" class="field-label">Ссылка на трек (YouTube, Spotify или другой сервис)</label>
+              <input
+                type="url"
+                id="song-url"
+                name="song-url"
+                class="input"
+                placeholder="https://www.youtube.com/watch?v=… или https://open.spotify.com/track/…"
+              />
+            </div>
+
+            <div class="field-grid field-grid-3">
+              <div class="field">
+                <label for="song-genre" class="field-label">Жанр</label>
+                <input
+                  type="text"
+                  id="song-genre"
+                  name="song-genre"
+                  class="input"
+                  placeholder="Джаз, инди, электроника…"
+                />
+              </div>
+
+              <div class="field">
+                <label for="song-year" class="field-label">Год / эпоха</label>
+                <input
+                  type="number"
+                  id="song-year"
+                  name="song-year"
+                  class="input"
+                  min="1900"
+                  max="2099"
+                  placeholder="1964"
+                />
+              </div>
+
+              <div class="field">
+                <label for="song-tempo" class="field-label">Темп</label>
+                <input
+                  type="number"
+                  id="song-tempo"
+                  name="song-tempo"
+                  class="input"
+                  min="40"
+                  max="240"
+                  placeholder="BPM, необязательно"
+                />
+              </div>
+            </div>
+
+            <div class="field-grid field-grid-2">
+              <div class="field">
+                <label for="song-mood" class="field-label">Характер звучания</label>
+                <select id="song-mood" name="song-mood" class="select">
+                  <option value="calm">Спокойное и мягкое</option>
+                  <option value="warm">Тёплое и уютное</option>
+                  <option value="melancholic">Меланхоличное и тихое</option>
+                  <option value="dreamy">Мечтательное и воздушное</option>
+                  <option value="energetic">Энергичное и живое</option>
+                  <option value="tense">Напряжённое и собранное</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="song-key" class="field-label">Лад (мажор / минор)</label>
+                <select id="song-key" name="song-key" class="select">
+                  <option value="unknown">Не знаю / не указывать</option>
+                  <option value="major">Мажор (светлее)</option>
+                  <option value="minor">Минор (глубже, сдержаннее)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field field-range">
+              <div class="range-header">
+                <label for="song-energy" class="field-label">Энергия трека</label>
+                <span class="range-readout">
+                  <span id="song-energy-value">50</span><span class="range-unit">/100</span>
+                </span>
+              </div>
+              <input
+                type="range"
+                id="song-energy"
+                name="song-energy"
+                class="range-input"
+                min="0"
+                max="100"
+                value="50"
+              />
+              <div class="range-scale" aria-hidden="true">
+                <span>Тихо и медленно</span>
+                <span>Сбалансированно</span>
+                <span>Интенсивно</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="song-file" class="field-label">Или загрузите аудиофайл (необязательно)</label>
+              <div class="audio-upload-box">
+                <input
+                  type="file"
+                  id="song-file"
+                  name="song-file"
+                  class="input-file-native"
+                  accept="audio/*"
+                />
+                <p class="field-hint">
+                  MP3, WAV, OGG — файл хранится только локально в вашем браузере (IndexedDB) и анализируется через Web Audio API.
+                </p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Form Footer / Submit -->
+          <div class="form-actions">
+            <a href="#archive" class="btn btn-ghost">Отмена</a>
+            <button type="submit" id="create-memory" class="btn btn-primary btn-lg">
+              <span class="btn-label">Собрать воспоминание дня</span>
+              <span class="btn-loading-text" aria-hidden="true">Собираем атмосферу дня…</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         VIEW 3: MEMORY VIEW / FOLDER OF THE DAY (#memory)
+    ================================================================ -->
+    <section id="view-memory" class="view view-memory" aria-labelledby="memory-title">
+      <div class="container">
+        <div id="memory-result" class="memory-folder">
+          <!-- Folder Top Bar -->
+          <div class="memory-topbar">
+            <button type="button" id="memory-back" class="btn btn-ghost btn-sm">
+              ← К архиву дней
+            </button>
+            <div class="memory-topbar-right">
+              <span class="folder-stamp" aria-hidden="true">Папка дня</span>
+              <button type="button" id="memory-delete" class="btn btn-danger-ghost btn-sm">
+                Удалить запись
+              </button>
+            </div>
+          </div>
+
+          <!-- Two-Column Editorial Spread -->
+          <div class="memory-spread">
+            <!-- Left Column: The 9:16 Artifact + Audio Controls -->
+            <div class="memory-artifact-col">
+              <div class="scene-mat">
+                <div class="scene-frame">
+                  <canvas
+                    id="memory-scene"
+                    width="540"
+                    height="960"
+                    aria-label="Анимированная сцена воспоминания дня"
+                  ></canvas>
+                  <div class="scene-grain-layer" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Playback & Voiceover Controls -->
+              <div class="artifact-controls" role="group" aria-label="Управление сценой и озвучкой">
+                <button type="button" id="play-toggle" class="btn btn-primary btn-control" aria-pressed="true">
+                  Пауза сцены
+                </button>
+                <button type="button" id="voice-toggle" class="btn btn-secondary btn-control" aria-pressed="false">
+                  Озвучить текст дня
+                </button>
+              </div>
+
+              <!-- Music Player Container (YouTube / Spotify iframe or <audio>) -->
+              <div id="player" class="memory-player" aria-label="Музыкальный плеер дня"></div>
+            </div>
+
+            <!-- Right Column: Folder Contents & Explainability -->
+            <div class="memory-details-col">
+              <header class="memory-header">
+                <div class="memory-meta-row">
+                  <time id="memory-date" class="memory-date"></time>
+                  <span id="memory-technique-badge" class="technique-badge"></span>
+                </div>
+
+                <h1 id="memory-title" class="memory-title"></h1>
+                <p id="memory-caption" class="memory-caption"></p>
+
+                <!-- Swatch strip fed by runtime CSS variables -->
+                <div class="memory-palette-bar" aria-label="Палитра этого дня">
+                  <span class="palette-dot palette-dot-bg" title="Фон"></span>
+                  <span class="palette-dot palette-dot-1" title="Основной тон"></span>
+                  <span class="palette-dot palette-dot-2" title="Дополнительный тон"></span>
+                  <span class="palette-dot palette-dot-3" title="Акцентный тон"></span>
+                </div>
+              </header>
+
+              <!-- Original Diary Entry -->
+              <section class="memory-block" aria-labelledby="memory-story-heading">
+                <h2 id="memory-story-heading" class="block-label">Запись дня</h2>
+                <div id="memory-content" class="memory-content"></div>
+              </section>
+
+              <!-- Song Meta -->
+              <section class="memory-block" aria-labelledby="memory-song-heading">
+                <h2 id="memory-song-heading" class="block-label">Саундтрек дня</h2>
+                <div id="memory-song-meta" class="memory-song-meta"></div>
+              </section>
+
+              <!-- Original Day Photos Strip -->
+              <section class="memory-block" aria-labelledby="memory-photos-heading">
+                <h2 id="memory-photos-heading" class="block-label">Снимки в папке</h2>
+                <div id="memory-photos-strip" class="memory-photos-strip" aria-label="Оригинальные фотографии дня"></div>
+              </section>
+
+              <!-- Explainability Panel -->
+              <details id="why-panel" class="why-panel">
+                <summary class="why-summary">
+                  <span>Почему этот день выглядит так?</span>
+                  <span class="why-chevron" aria-hidden="true"></span>
+                </summary>
+                <div class="why-body">
+                  <p class="why-intro">
+                    Образ дня собран по правилам визуальной системы из ваших слов, оттенков снимков и характера музыки:
+                  </p>
+                  <ul id="why-list" class="why-list"></ul>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         VIEW 4: ARCHIVE (#archive)
+    ================================================================ -->
+    <section id="view-archive" class="view view-archive" aria-labelledby="archive-heading">
+      <div class="container">
+        <header class="archive-header">
+          <div>
+            <p class="eyebrow">Личный дневник</p>
+            <h1 id="archive-heading" class="view-title">Архив папок дней</h1>
+            <p class="view-subtitle">
+              Разные настроения внутри одной визуальной системы. Откройте любую папку, чтобы снова увидеть и услышать этот день.
+            </p>
+          </div>
+          <a href="#create" class="btn btn-primary">+ Новый день</a>
+        </header>
+
+        <!-- Diary Folders Grid -->
+        <div id="memory-archive" class="archive-grid" aria-live="polite"></div>
+
+        <!-- Empty State -->
+        <div id="archive-empty" class="archive-empty" hidden>
+          <div class="empty-illustration" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </div>
+          <h2 class="empty-title">В вашем дневнике пока нет ни одной папки</h2>
+          <p class="empty-text">
+            Вспомните один из самых тёплых или необычных дней: запишите пару абзацев, добавьте фотографию и песню, которая тогда звучала.
+          </p>
+          <a href="#create" class="btn btn-primary">Создать первое воспоминание</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-brand">MEMENTO · Личный дневник атмосферы дня</p>
+      <p class="footer-note">
+        Система передаёт художественную атмосферу дня и не является психологической или медицинской оценкой. Все данные хранятся локально в вашем браузере.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       ARCHIVE FOLDER CARD TEMPLATE (Strict Contract Selectors)
+  ================================================================ -->
+  <template id="folder-card-template">
+    <article class="folder-card" tabindex="0" role="button">
+      <div class="folder-tab" aria-hidden="true"></div>
+      <div class="folder-body">
+        <div class="folder-preview">
+          <span class="folder-preview-grain" aria-hidden="true"></span>
+          <div class="folder-preview-swatches" aria-hidden="true">
+            <span class="swatch-1"></span>
+            <span class="swatch-2"></span>
+            <span class="swatch-3"></span>
+          </div>
+        </div>
+        <div class="folder-meta">
+          <div class="folder-meta-top">
+            <time class="folder-date"></time>
+            <span class="folder-technique"></span>
+          </div>
+          <h2 class="folder-title"></h2>
+          <p class="folder-song"></p>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- Temporary demo script for visual inspection; swap to js/main.js on integration -->
+  <script type="module" src="js/demo.js"></script>
+</body>
+</html>
