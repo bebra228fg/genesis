@@ -102,7 +102,7 @@ const DEMO_SPECS = [
     song: {
       title: 'Fly Me to the Moon',
       artist: 'Frank Sinatra',
-      url: 'https://www.youtube.com/watch?v=ZEcqHA7dbwM',
+      url: 'https://open.spotify.com/track/7FXj7Qg3YorUxdrzvrcY25?si=d212fcd621e74dca',
       year: 1964,
       genre: 'Джаз',
       mood: 'calm',
@@ -120,7 +120,7 @@ const DEMO_SPECS = [
     song: {
       title: 'Nightcall',
       artist: 'Kavinsky',
-      url: 'https://www.youtube.com/watch?v=MV_3Dpw-BRY',
+      url: 'https://open.spotify.com/track/0U0ldCRmgCqhVvD6ksG63j?si=d73cc811f0264f02',
       year: 2010,
       genre: 'Электроника',
       mood: 'tense',
@@ -138,7 +138,7 @@ const DEMO_SPECS = [
     song: {
       title: 'Группа крови',
       artist: 'Кино',
-      url: 'https://www.youtube.com/watch?v=xKpzH5bxYsk',
+      url: 'https://open.spotify.com/track/4iRg9tHDgmRPvv56IC46Pl?si=a32e494e561141b5',
       year: 1988,
       genre: 'Пост-панк',
       mood: 'melancholic',

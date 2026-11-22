@@ -1253,15 +1253,8 @@ a {
 }
 
 .technique-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  background: color-mix(in srgb, var(--mem-bg) 70%, var(--shell-surface));
-  border: 1px solid color-mix(in srgb, var(--mem-c1) 42%, var(--shell-border));
+  background: var(--shell-surface);
+  border: 1px solid color-mix(in srgb, var(--mem-c1) 45%, var(--shell-border));
   color: var(--ink-primary);
 }
 
