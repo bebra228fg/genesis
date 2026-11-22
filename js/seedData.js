@@ -138,7 +138,7 @@ const DEMO_SPECS = [
     song: {
       title: 'Группа крови',
       artist: 'Кино',
-      url: 'https://www.youtube.com/watch?v=9msmCgJdr24',
+      url: 'https://www.youtube.com/watch?v=xKpzH5bxYsk',
       year: 1988,
       genre: 'Пост-панк',
       mood: 'melancholic',
